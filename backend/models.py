@@ -20,7 +20,7 @@ class Album(models.Model):
 class Track(models.Model):
     title = models.CharField(max_length=511)
     album = models.ForeignKey(Album, on_delete=models.CASCADE, blank=True, null=True)
-    lyrics = models.CharField(max_length=1023, blank=True)
+    lyrics = models.TextField(blank=True)
     file = models.FileField(upload_to='uploads/tracks')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
