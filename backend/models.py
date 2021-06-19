@@ -1,12 +1,5 @@
 from django.db import models
-
-
-class User(models.Model):
-    email = models.EmailField()
-    password = models.CharField(max_length=63)
-    name = models.CharField(max_length=511)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+from django.contrib.auth.models import User
 
 
 class Album(models.Model):
