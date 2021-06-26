@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from backend.views import DashboardView
+from backend.views import DashboardView, AlbumCreateView, TrackCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', DashboardView.as_view())
+    path('', DashboardView.as_view()),
+    path('album_form/', AlbumCreateView.as_view()),
+    path('track_form/', TrackCreateView.as_view())
 ]
