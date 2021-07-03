@@ -21,5 +21,5 @@ class Track(models.Model):
 class TrackAlbum(models.Model):
     track = models.ForeignKey(Track, on_delete=models.CASCADE)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    prev_track_album = models.ForeignKey('self', on_delete=models.CASCADE, related_name='prev')
-    next_track_album = models.ForeignKey('self', on_delete=models.CASCADE, related_name='next')
+    previous = models.ForeignKey('self', on_delete=models.CASCADE, related_name='next', blank=True,
+                                 null=True)
