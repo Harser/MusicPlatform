@@ -2,5 +2,21 @@
 
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-  Hello world
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <h5 class="card-header">Самые популярные альбомы</h5>
+        <div class="card-body">
+          <div class="col">Альбом 1</div>
+          <div class="col">Альбом 2</div>
+          <div class="col">Альбом 3</div>
+          <div class="col">Альбом 4</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      Недельный плейлист
+      {% include "dashboard/carousel.html" %}
+    </div>
+  </div>
 {% endblock %}

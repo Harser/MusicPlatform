@@ -1,5 +1,6 @@
-from django.views.generic import TemplateView
-from django.views.generic import CreateView
+from django.views.generic import TemplateView, CreateView
+
+from .forms import AlbumForm, TrackForm
 from .models import Album, Track
 
 
@@ -9,11 +10,13 @@ class DashboardView(TemplateView):
 
 class AlbumCreateView(CreateView):
     model = Album
+    form_class = AlbumForm
     template_name = 'album_form.html'
-    fields = ('title', 'creator')
+    success_url = '/'
 
 
 class TrackCreateView(CreateView):
     model = Track
+    form_class = TrackForm
     template_name = 'track_form.html'
-    fields = ('title', 'lyrics', 'file')
+    success_url = '/'
